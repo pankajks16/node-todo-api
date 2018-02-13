@@ -24,9 +24,10 @@ MongoClient.connect(dburl, (err, db) => {
 	// });
 
 
-	//findOneAndDelete()   -- This will find the first record out of the result obtained and take delete
-	// action on it. This method returns the deleted object after the delete operation.
+	//findOneAndDelete()   -- This will find the first record out of the satisfied result obtained and take 
+	// delete action on it. This method returns the deleted object after the delete operation.
+	
 	myDb.findOneAndDelete({completed: false}).then((result) => {
 		console.log(result);
-	});
+	});	
 });

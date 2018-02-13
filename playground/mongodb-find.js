@@ -25,7 +25,7 @@ MongoClient.connect(url, (err, db) => {
 		if(count !== 0){
 			myDb.find({completed: false}).toArray().then((docs) => {
 				console.log(JSON.stringify(docs, undefined, 2));
-			});
+				});
 		}
 	}, (err) => {
 		console.log('Unable to fetch the records .... !!!\n', err);
