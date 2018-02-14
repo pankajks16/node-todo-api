@@ -23,26 +23,17 @@ app.post('/todos', (req, res) => {
 	});
 });
 
+
+app.get('/todos', (req, res) => {
+	console.log(req.header);
+	Todo.find().then((docs) => {
+		res.send({docs}); // enclosing in an object to include status code if possible or any other entity apart
+		// from the array returned in the response
+	}, (err) => {
+		res.status(400).send(err);
+	});
+});
+
 app.listen(3000, () => {
 	console.log('Started on port 3000 !!!');
 });	
-
-// var newTodo = new Todo({
-// 	text: "Pankaj is here",
-// 	completed: false,
-// 	completedAt: "45"
-// });
-
-
-// var newTodo = new Todo({
-// 	text: "abcde"
-// });
-
-// newTodo.save().then((doc) => {
-// 	console.log('Saved the record \n', JSON.stringify(doc, undefined, 2));
-// }, (err) => {
-// 	console.log('Some error occured while entering the record.\n', err);
-// });
-
-
-
