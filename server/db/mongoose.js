@@ -1,7 +1,11 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/TodoApp');
+
+//var herokuURL = 'mongodb://heroku_mv6xspjm:ptpvml68afs4v98pdh435pr8vi@ds235788.mlab.com:35788/heroku_mv6xspjm';
+var herokuURI = process.env.MONGODB_URI;
+var localhostURL = 'mongodb://localhost:27017/TodoApp';
+mongoose.connect( herokuURI || localhostURL );
 
 // mongoose.connect('mongodb://localhost/TodoApp');   
 
