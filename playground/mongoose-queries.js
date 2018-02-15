@@ -1,13 +1,16 @@
 const {mongoose} = require('./../server/db/mongoose');
 const {Todo} = require('./../server/models/todo');
 
-var id = '4a8434568085de09fcb7125a';
+var id = '5a8434568085de09fcb7125a';
 // Todo.find().then((doc) => {
 // 	console.log(JSON.stringify(doc, undefined, 2));
 // }, (e) => {
 // 	console.log(e)
 // });
 
+
+// URL for mongoose query related to search:
+//    http://mongoosejs.com/docs/queries.html
 
 // find() method  ---- returns an array. If result not found, it will return an empty array like []
 Todo.find({
