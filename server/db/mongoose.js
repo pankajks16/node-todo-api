@@ -14,7 +14,7 @@ mongoose.connect( herokuURI || localhostURL );
 
 //format: mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
 // anything under square bracket [] is optional term
-
+console.log('Executing mongoose connection file !!!');
 module.exports = {
 	mongoose
 };

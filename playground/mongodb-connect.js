@@ -3,6 +3,11 @@ const {MongoClient, ObjectId} = require('mongodb');
 
 // const ObjectId = require('mongodb').ObjectId;
 
+// var obj = new ObjectId();
+
+// console.log(obj);
+// console.log(obj.toHexString().length);
+
 // var id = new ObjectId();
 // var id1 = new ObjectId();
 // var id2 = new ObjectId("000000000000"); // the argument must have a single kind of string and of length 12
