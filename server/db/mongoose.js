@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise; // Don't know the role of this line. Search it !!!
 
 //var herokuURL = 'mongodb://heroku_mv6xspjm:ptpvml68afs4v98pdh435pr8vi@ds235788.mlab.com:35788/heroku_mv6xspjm';
 var herokuURI = process.env.MONGODB_URI;
