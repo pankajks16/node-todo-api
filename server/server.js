@@ -128,29 +128,21 @@ app.patch('/todos/:id', (req, res) => {
 
 
 
+// POST /users  -- to create a new user based on the new update USER model having unique email contraint.
+
+app.post('/users', (req, res) => {
+	var body = _.pick(req.body, ['email', 'password']);
+
+	var user = new User(body);
+
+	user.save().then((doc) => {
+		res.send(doc);
+	}, (err) => {
+		res.status(400).send(err);
+	});
+});
 
 // Port configuration to start the port
 app.listen(port, () => {
 	console.log(`Started on port ${port} !!!`);
 });	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
