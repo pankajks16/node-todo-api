@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+	 const mongoose = require('mongoose');
 const validator = require('validator');
 // {
 // 	email: 'pankaj@example.com',
@@ -22,13 +22,13 @@ var User = mongoose.model('User', {
 			validator: (value) => {
 				return validator.isEmail(value);
 			},
-			message: '{VALUE} is not a valid email id.'
+			message: '{VALUE} is not a valid email id. Plz check it.'
 		}
 	},
 	password: {
 			type: String,
 			required: true,
-			minlength: 6 	
+			minlength: [6, 'Password length should be greater than SIX characters !!!!'] 	
 	},
 	tokens: [{
 		access: {
@@ -42,6 +42,7 @@ var User = mongoose.model('User', {
 	}]
 });
 
-
+// required and minlength or maxlength properties can take array as the parameter where the second arg
+// is the custom message that we want to display when error throws up !!!
 
 module.exports = { User };
