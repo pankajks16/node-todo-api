@@ -1,0 +1,7 @@
+Links:
+
+1. http://techidiocy.com/install-mongodb-as-a-windows-service/
+
+2. https://www.mkyong.com/mongodb/how-to-run-mongodb-as-windows-service/
+
+3. https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-windows/      #(Link to install mongodb on windows)

@@ -18,6 +18,12 @@ var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());  // dont know the role of this but search it off....
 
+// We also imported the body-parser Node.js module. This module plays a critical role. 
+// It parses the body of an HTTP request. When it comes to processing a POST request, this is important
+
+// for more details visit: 
+// https://www.gitbook.com/book/kevinchisholm/handling-post-requests-with-express-and-node-js/details
+
 app.use(expressLogging(logger));
 
 // POST /todos api is used for creating a new todo 
@@ -140,6 +146,18 @@ app.post('/users', (req, res) => {
 	});
 });
 
+
+// GET /users api is used to get all the todos available in the mongodb database
+app.get('/users', (req, res) => {
+	//console.log(req.header);
+	User.find().then((docs) => {
+		res.send({docs, status: "success"}); // enclosing in an object to include status code if possible or any other entity apart
+		// from the array returned in the response
+
+	}, (err) => {
+		res.status(400).send(err);
+	});
+});
 
 // We can use the following objects to filter out the required error to be shown in response instead of whole
 // object e.g:  res.status(400).send(err.errmsg)
